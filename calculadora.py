@@ -16,13 +16,13 @@ def division(a, b):
 
 def raiz_cuadrada(x):
     if x < 0:
-        return "Error: Número negativo"
+        raise ValueError("Error: Número negativo")
     precision = 0.001
     g = x / 2.0
     while abs(g * g - x) > precision:
         g = (g + x / g) / 2
     return g
-
+    
 def factorial(n):
     if n == 0:
         return 1
