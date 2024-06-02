@@ -14,6 +14,32 @@ def division(a, b):
         return "Error: División por cero"
     return a / b
 
+def raiz_cuadrada(x):
+    if x < 0:
+        return "Error: Número negativo"
+    precision = 0.001
+    g = x / 2.0
+    while abs(g * g - x) > precision:
+        g = (g + x / g) / 2
+    return g
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def exponencial(x):
+    precision = 0.001
+    suma = 1  
+    termino = 1
+    n = 1
+    while termino > precision:
+        termino = (x ** n) / factorial(n)
+        suma += termino
+        n += 1
+    return suma
+
 class CalculadoraApp:
     def __init__(self, master):
         self.master = master
